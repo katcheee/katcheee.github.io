@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanPaws — Kathy Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="toc">
+    <a href="../index.html" class="toc-back">&larr; Back</a>
+    <ul>
+      <li><a href="#problem" class="toc-link">Problem</a></li>
+      <li><a href="#research" class="toc-link">Research</a></li>
+      <li><a href="#solution" class="toc-link">Solution</a></li>
+      <li><a href="#testing" class="toc-link">User Testing</a></li>
+      <li><a href="#outcome" class="toc-link">Outcome + Takeaways</a></li>
+    </ul>
+  </aside>
+
+  <div class="case-wrapper">
+
+    <!-- HERO IMAGE -->
+    <div class="case-hero">
+      <img src="../images/project-4-hero.jpg" alt="CleanPaws project hero" style="object-position: center 54%;">
+    </div>
+
+    <!-- TITLE & META -->
+    <div class="case-header fade-in">
+      <h1>CleanPaws</h1>
+      <p class="case-subtitle">Turning dog-waste cleanup into a community win</p>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <h3>Role</h3>
+          <p>Designer &amp; Prototyper</p>
+        </div>
+        <div class="case-meta-item">
+          <h3>Timeline</h3>
+          <p>Oct – Dec 2025</p>
+        </div>
+        <div class="case-meta-item">
+          <h3>Skills</h3>
+          <p>Physical Computing</p>
+          <p>Prototyping</p>
+          <p>Interaction Design</p>
+          <p>User Research</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <div class="case-section fade-in" id="problem">
+      <h2>Problem</h2>
+      <p>
+        Dog waste is one of those things we all notice on NYC sidewalks but accept as part of city life. Last year, Brooklyn residents filed close to 700 311 complaints about dog waste — but only 13 citations were issued. Neighborhoods with the highest complaint rates often have the fewest free bag dispensers or accessible waste bins, so people are expected to behave responsibly without the infrastructure to support it. Enforcement requires an officer to witness someone leaving waste behind, making the Pooper-Scooper Law nearly impossible to enforce at scale.
+      </p>
+    </div>
+
+    <!-- RESEARCH BAND -->
+    <div class="research-band">
+      <div class="research-band-inner">
+
+        <div class="case-section fade-in" id="research">
+          <h2>Research</h2>
+          <p>
+            When enforcement or resources fall short, the city and neighborhoods turn to awareness campaigns. But the approach is almost always the same: catch people doing the wrong thing.
+          </p>
+        </div>
+
+        <div class="case-section fade-in">
+          <h3>Campaigns that shame, not change</h3>
+          <p>
+            The NYC Department of Sanitation ran a citywide anti-littering campaign that indirectly called out "dog-poop-trators." Neighborhoods have tried shame campaigns — posting photos or signs calling out repeat offenders. These efforts get attention, but they don't lead to lasting behavior change, and they're controversial since they publicly single out individuals.
+          </p>
+        </div>
+
+        <div class="case-section fade-in">
+          <h3>Community frustration is visible</h3>
+          <p>
+            Long Island City has been called the "dog-waste capital of New York" in online discussions — showing just how visible and irritating this problem has become for residents. The frustration is real, but the tools available haven't matched the scale of the issue.
+          </p>
+          <div class="placeholder-image">Research visual or data</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KEY INSIGHT (outside gray band) -->
+    <div class="case-insight fade-in">
+      <h3>Insight</h3>
+      <p class="insight-title">Encouragement works better than enforcement</p>
+      <p>
+        When cleanup feels like a chore — or worse, like something you could be punished for not doing — people disengage. But when it feels like contributing to something visible and shared, people are more willing to participate.
+      </p>
+      <p class="hmw-callout">
+        How might we make responsible cleanup feel rewarding instead of obligatory?
+      </p>
+    </div>
+
+    <!-- SOLUTION -->
+    <div class="case-section fade-in" id="solution">
+      <h2>Solution</h2>
+      <p>
+        CleanPaws is an interactive dog-waste station designed for sidewalks and parks. It combines a waste bin with real-time feedback — turning cleanup into a small, positive community interaction. The station is built with an Arduino and a load cell that detects when a bag is dropped in, triggering immediate feedback for each action.
+      </p>
+    </div>
+
+    <!-- DEMO -->
+    <div class="case-images fade-in">
+      <div class="placeholder-image" style="aspect-ratio: 16/9;">Demo GIF — someone dropping a bag in the bin</div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="case-feature fade-in">
+      <div class="case-feature-item">
+        <div class="case-feature-text">
+          <h3>Drop a bag, get a response</h3>
+          <p>
+            When someone drops a waste bag in, the screen lights up with a friendly message and plays a chime — just enough to acknowledge the action without feeling over the top. Messages rotate to keep the interaction fresh.
+          </p>
+        </div>
+      </div>
+      <div class="case-feature-item">
+        <div class="case-feature-text">
+          <h3>See collective progress</h3>
+          <p>
+            A fullness meter under "Every Bag Counts" updates immediately, giving people feedback that their action made a difference. Individual actions add up into visible community impact.
+          </p>
+        </div>
+      </div>
+      <div class="case-feature-item">
+        <div class="case-feature-text">
+          <h3>Celebrate when full</h3>
+          <p>
+            When the bin reaches capacity, a brief celebratory music cue plays and the screen cycles through impact data: 20 kilograms collected (about 60 dogs' worth), 96 million gallons of water protected — enough to supply 877 NYC households. The final screen reinforces "Community makes it happen."
+          </p>
+        </div>
+      </div>
+      <div class="case-feature-item">
+        <div class="case-feature-text">
+          <h3>Remove barriers</h3>
+          <p>
+            A built-in bag dispenser at the bottom ensures free bags are always available — removing a major barrier to cleanup.
+          </p>
+        </div>
+        <div class="placeholder-image tall">Prototype photo</div>
+      </div>
+    </div>
+
+    <!-- USER TESTING -->
+    <div class="case-section fade-in" id="testing">
+      <h2>User Testing</h2>
+      <h3>What worked</h3>
+      <p>
+        People genuinely enjoyed the small interaction — the message and chime made it feel good to do the right thing. The collective count created a sense of community impact, and the contextualized data helped people understand the scale of the problem and how their individual action contributes to something larger.
+      </p>
+      <h3>What needs improvement</h3>
+      <p>
+        A larger screen or simple lighting could make the moment feel even more rewarding. The station could use more personality — something fun or delightful that makes people smile. And there's an opportunity to connect with existing volunteer groups, like community stewards from Hillside Dog Park or participants in the NYC Parks Adopt-a-Spot program, who already help maintain shared spaces — potentially collaborating on emptying the bin or integrating collected waste into compost streams.
+      </p>
+    </div>
+
+    <!-- OUTCOME + TAKEAWAYS -->
+    <div class="case-section fade-in" id="outcome">
+      <h2>Outcome + Takeaways</h2>
+      <p>
+        CleanPaws is about making the right thing easy, visible, and even a little enjoyable. A small interaction that adds up — and helps shift how we care for shared spaces.
+      </p>
+
+      <div class="takeaway-list">
+        <div class="takeaway-item">
+          <span class="takeaway-number">1</span>
+          <div>
+            <h3>Design for Behavior, Not Compliance</h3>
+            <p>Positive feedback loops change behavior more effectively than punishment or awareness campaigns. Making an action feel good is more sustainable than making people feel guilty.</p>
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <span class="takeaway-number">2</span>
+          <div>
+            <h3>Small Moments Build Community</h3>
+            <p>Something as simple as a chime and a counter can make people feel like they're part of something larger. Collective visibility turns individual actions into shared wins.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROJECT NAV -->
+  <nav class="project-nav">
+    <a href="project-3.html" class="project-nav-link prev">&larr; Industrious</a>
+    <a href="project-1.html" class="project-nav-link next">Notes of Hope &rarr;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Kathy Choi</p>
+    <ul class="footer-links">
+      <li><a href="mailto:your@email.com">Email</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="#" target="_blank">Resume</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // TOC position — align with case header, stick at nav
+    const toc = document.querySelector('.toc');
+    const caseHeader = document.querySelector('.case-header');
+    function updateTocPos() {
+      const headerTop = caseHeader.getBoundingClientRect().top;
+      toc.style.top = Math.max(72, headerTop) + 'px';
+    }
+    window.addEventListener('scroll', updateTocPos);
+    window.addEventListener('load', updateTocPos);
+
+    // TOC active state
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+    const tocObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.classList.remove('active'));
+          const active = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    sections.forEach(s => { if (s) tocObserver.observe(s); });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes of Hope — Kathy Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="toc">
+    <a href="../index.html" class="toc-back">&larr; Back</a>
+    <ul>
+      <li><a href="#problem" class="toc-link">Problem</a></li>
+      <li><a href="#solutions" class="toc-link">Solutions</a></li>
+      <li><a href="#outcome" class="toc-link">Outcome + Takeaways</a></li>
+    </ul>
+  </aside>
+
+  <div class="case-wrapper">
+
+    <!-- HERO IMAGE -->
+    <div class="case-hero">
+      <img src="../images/project-1-hero.jpg" alt="Project hero image" style="object-position: center 45%;">
+    </div>
+
+    <!-- TITLE & META -->
+    <div class="case-header fade-in">
+      <h1>Notes of Hope</h1>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <h3>Role</h3>
+          <p>Graphic Designer</p>
+        </div>
+        <div class="case-meta-item">
+          <h3>Timeline</h3>
+          <p>May – June 2020</p>
+        </div>
+        <div class="case-meta-item">
+          <h3>Skills</h3>
+          <p>Adobe Illustrator</p>
+          <p>Adobe Photoshop</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- PROBLEM -->
+    <div class="case-section fade-in" id="problem">
+      <h2>Problem</h2>
+      <p>
+        During COVID-19, a Boston-based nonprofit of classical musicians streamed daily performances to thank frontline workers — but the project lacked a clear visual identity. They needed a logo that could communicate hope and gratitude in a time of uncertainty while working across livestreams, social media, and digital promotions.
+      </p>
+    </div>
+
+    <!-- PULL QUOTE 1 -->
+    <div class="case-quotes">
+      <div class="quote-block fade-in">
+        <blockquote>
+          "Music became a way to say thank you when words weren’t enough."
+        </blockquote>
+        <cite>— Project mission statement</cite>
+      </div>
+    </div>
+
+    <div class="case-section fade-in">
+      <h3>Logo Exploration</h3>
+      <p>
+        Early concepts explored different ways to visualize music, connection, and hope before refining the final direction.
+      </p>
+      <img src="../images/noh-logo-options.jpg" alt="logo options">
+    </div>
+
+    <!-- SOLUTIONS -->
+    <div class="case-section fade-in" id="solutions">
+      <h2>Solutions</h2>
+      <p>
+        I designed a logo and visual identity that translated the project’s mission into a simple, recognizable mark.
+      </p>
+      <p>
+        The system was built to feel warm, uplifting, and accessible, while remaining flexible enough for daily digital use.
+      </p>
+      <img src="../images/noh-final-logo.jpg" alt="Notes of Hope final logo">
+    </div>
+
+    <!-- PULL QUOTE 2 -->
+    <div class="case-quotes">
+      <div class="quote-block fade-in">
+        <blockquote>
+          "Exploring multiple concepts helped narrow down the strongest direction."
+        </blockquote>
+        <cite>— Project reflection</cite>
+      </div>
+    </div>
+
+    <!-- OUTCOME + TAKEAWAYS -->
+    <div class="case-section fade-in" id="outcome">
+      <h2>Outcome + Takeaways</h2>
+      <p>
+        The final logo gave Notes of Hope a clear and recognizable identity for promoting performances during COVID-19.
+      </p>
+      <p>
+        Working through multiple directions helped clarify what resonated most with the client and ensured the final mark reflected the spirit of the project.
+      </p>
+    
+      <div class="takeaway-list">
+        <div class="takeaway-item">
+          <span class="takeaway-number">1</span>
+          <div>
+            <h3>Showing Options Builds Trust</h3>
+            <p>Presenting several directions made it easier for the client to articulate what they connected with and feel confident in the final choice.</p>
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <span class="takeaway-number">2</span>
+          <div>
+            <h3>Constraints Shape Good Design</h3>
+            <p>Designing primarily for digital use meant the logo had to stay clear and legible at small sizes, which pushed the design toward a simpler and stronger solution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROJECT NAV -->
+  <nav class="project-nav">
+    <a href="project-4.html" class="project-nav-link prev">&larr; CleanPaws</a>
+    <a href="project-2.html" class="project-nav-link next">GreenThumb &rarr;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Kathy Choi</p>
+    <ul class="footer-links">
+      <li><a href="mailto:your@email.com">Email</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="#" target="_blank">Resume</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // TOC position — align with case header, stick at nav
+    const toc = document.querySelector('.toc');
+    const caseHeader = document.querySelector('.case-header');
+    function updateTocPos() {
+      const headerTop = caseHeader.getBoundingClientRect().top;
+      toc.style.top = Math.max(72, headerTop) + 'px';
+    }
+    window.addEventListener('scroll', updateTocPos);
+    window.addEventListener('load', updateTocPos);
+
+    // TOC active state
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+    const tocObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.classList.remove('active'));
+          const active = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    sections.forEach(s => { if (s) tocObserver.observe(s); });
+  </script>
+
+</body>
+</html>
