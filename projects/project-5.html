@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wynn Boston Harbor — Kathy Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">Kathy Choi</a>
+    <ul class="nav-links">
+      <li><a href="../about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="toc">
+    <a href="../index.html" class="toc-back">&larr; Back</a>
+    <ul>
+      <li class="toc-star"><img src="../images/star.png" alt=""></li>
+      <li><a href="#brief" class="toc-link">The Brief</a></li>
+      <li><a href="#work" class="toc-link">The Work</a></li>
+      <li><a href="#result" class="toc-link">The Result</a></li>
+      <li><a href="#outcome" class="toc-link">What I Took Away</a></li>
+    </ul>
+  </aside>
+
+  <div class="case-wrapper">
+
+    <!-- HERO IMAGE -->
+    <div class="case-hero">
+      <img src="../images/wynn-hero.jpg" alt="Wynn Boston Harbor kiosk at TD Garden">
+    </div>
+
+    <!-- TITLE & META -->
+    <div class="case-header fade-in">
+      <h1>Wynn Boston Harbor Kiosk</h1>
+      <p class="case-subtitle">Bringing a casino opening to life at TD Garden</p>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <h3>Role</h3>
+          <p>Visual Designer</p>
+        </div>
+        <div class="case-meta-item">
+          <h3>Timeline</h3>
+          <p>2019</p>
+        </div>
+        <div class="case-meta-item">
+          <h3>Skills</h3>
+          <p>Brand Design</p>
+          <p>Graphic Design</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE BRIEF -->
+    <div class="case-section fade-in" id="brief">
+      <h2>The Brief</h2>
+      <p>
+        For the grand opening of Wynn Boston Harbor in June 2019, the casino needed a branded presence at TD Garden to attract stadium-goers and drive sign-ups for their Red Card membership program.
+      </p>
+    </div>
+
+    <!-- THE WORK -->
+    <div class="case-section fade-in" id="work">
+      <h2>The Work</h2>
+      <p>
+        Working within Wynn's existing brand, we designed a kiosk and accompanying stands that felt unmistakably Wynn. Their signature red, floral patterns, and butterfly motifs gave us a rich visual language to work with — the challenge was translating it into something that could hold its own in a stadium environment.
+      </p>
+      <p>
+        The kiosk shape drew from the architecture of Wynn Boston Harbor itself. Lighting placed at the top ensured visibility after dark. Every detail was considered to make the space feel like an extension of the brand, not just a promotional booth.
+      </p>
+    </div>
+
+    <!-- KIOSK IMAGES: NON-LIT / LIT -->
+    <div class="insights-grid fade-in">
+      <div class="case-insight">
+        <img src="../images/wynn-nonlit.jpg" alt="Wynn kiosk without lighting" style="width: 100%; display: block; border-radius: 8px;">
+      </div>
+      <div class="case-insight">
+        <img src="../images/wynn-lit.jpg" alt="Wynn kiosk with lighting" style="width: 100%; display: block; border-radius: 8px;">
+      </div>
+    </div>
+
+    <!-- THE RESULT -->
+    <div class="case-section fade-in" id="result">
+      <h2>The Result</h2>
+      <p>
+        The kiosk drew consistent attention from passersby and gave Wynn's staff an effective platform to promote the Red Card program. Sign-ups were strong, and the installation gave the casino a memorable first impression in Boston before the doors even opened.
+      </p>
+    </div>
+
+    <!-- RESULT IMAGE -->
+    <div class="case-images fade-in">
+      <img src="../images/wynn-people.jpg" alt="People at the Wynn kiosk" style="width: 100%; display: block; border-radius: 8px;">
+    </div>
+
+    <!-- WHAT I TOOK AWAY -->
+    <div class="case-section fade-in" id="outcome">
+      <h2>What I Took Away</h2>
+
+      <div class="takeaway-list">
+        <div class="takeaway-item">
+          <span class="takeaway-number">1</span>
+          <div>
+            <h3>Brand fluency is a skill.</h3>
+            <p>Working within an established visual system isn't a constraint — it's a creative challenge. Understanding what makes a brand feel like itself, and extending that into a new format, is something I genuinely enjoy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROJECT NAV -->
+  <nav class="project-nav">
+    <a href="project-1.html" class="project-nav-link prev">&larr; Notes of Hope</a>
+    <a href="project-2.html" class="project-nav-link next">GreenThumb &rarr;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Kathy Choi</p>
+    <ul class="footer-links">
+      <li><a href="mailto:your@email.com">Email</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="#" target="_blank">Resume</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // TOC position — align with case header, stick at nav
+    const toc = document.querySelector('.toc');
+    const caseHeader = document.querySelector('.case-header');
+    function updateTocPos() {
+      const headerTop = caseHeader.getBoundingClientRect().top;
+      toc.style.top = Math.max(72, headerTop) + 'px';
+    }
+    window.addEventListener('scroll', updateTocPos);
+    window.addEventListener('load', updateTocPos);
+
+    // TOC dotted line — spans center of first to center of last link
+    const tocUl = document.querySelector('.toc ul');
+    const tocItems = document.querySelectorAll('.toc ul li:not(.toc-star)');
+    const tocLine = document.createElement('div');
+    tocLine.className = 'toc-line';
+    tocUl.appendChild(tocLine);
+    function updateTocLine() {
+      const first = tocItems[0];
+      const last = tocItems[tocItems.length - 1];
+      const firstCenter = first.offsetTop + first.offsetHeight / 2;
+      const lastCenter = last.offsetTop + last.offsetHeight / 2;
+      tocLine.style.top = firstCenter + 'px';
+      tocLine.style.height = (lastCenter - firstCenter) + 'px';
+    }
+    window.addEventListener('load', updateTocLine);
+
+    // TOC active state + star position
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const tocStar = document.querySelector('.toc-star');
+    const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+    function moveStar(activeLink) {
+      if (!activeLink || !tocStar) return;
+      const li = activeLink.parentElement;
+      const starOffset = li.offsetTop + (activeLink.offsetHeight / 2) - (tocStar.offsetHeight / 2);
+      tocStar.style.top = starOffset + 'px';
+    }
+    const tocObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.classList.remove('active'));
+          const active = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
+          if (active) {
+            active.classList.add('active');
+            moveStar(active);
+          }
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    sections.forEach(s => { if (s) tocObserver.observe(s); });
+  </script>
+
+</body>
+</html>

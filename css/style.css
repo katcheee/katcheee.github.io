@@ -418,15 +418,25 @@ nav {
 }
 
 .case-section h3 {
+  position: relative;
   font-family: var(--body-font);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   line-height: 1.4;
-  color: #77b700;
+  color: var(--dark-gray);
   margin-top: 25px;
   margin-bottom: 8px;
+}
+
+.h3-star {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
 }
 
 /* ---- Insight blocks ---- */
@@ -559,7 +569,7 @@ nav {
   margin-bottom: 6px;
 }
 
-.case-section img {
+.case-section img:not(.h3-star) {
   width: 100%;
   margin-top: 28px;
 }
@@ -643,7 +653,7 @@ nav {
 .quote-block {
   margin-bottom: 36px;
   padding-left: 24px;
-  border-left: 3px solid var(--black);
+  border-left: 3px solid #b6d578;
   text-align: left;
 }
 
@@ -656,7 +666,7 @@ nav {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--black);
+  color: var(--dark-gray);
   font-style: italic;
 }
 
@@ -665,7 +675,7 @@ nav {
   margin-top: 8px;
   font-size: 14px;
   font-style: normal;
-  color: var(--soft-gray);
+  color: var(--mid-gray);
   font-weight: 500;
 }
 
@@ -717,7 +727,7 @@ nav {
   font-family: var(--heading-font);
   font-size: 50px;
   font-weight: 100;
-  color: var(--light-gray);
+  color: #b6d578;
   flex-shrink: 0;
   line-height: 1;
 }
@@ -730,7 +740,7 @@ nav {
   letter-spacing: 0.06em;
   margin-top: 0;
   margin-bottom: 4px;
-  color: #3376cd;
+  color: var(--black);
   line-height: 1.4;
 }
 
