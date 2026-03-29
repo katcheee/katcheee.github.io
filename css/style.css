@@ -456,7 +456,7 @@ nav.scrolled {
 .case-insight h3 {
   font-family: var(--body-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--mid-gray);
@@ -695,9 +695,9 @@ nav.scrolled {
 
 .takeaway-number {
   font-family: var(--heading-font);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--black);
+  font-size: 50px;
+  font-weight: 100;
+  color: var(--dark-gray);
   flex-shrink: 0;
   line-height: 1;
 }
@@ -929,7 +929,7 @@ footer p {
 
 .toc .toc-link {
   font-family: var(--body-font);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 400;
   color: var(--soft-gray);
   text-decoration: none;
