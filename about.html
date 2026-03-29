@@ -46,25 +46,28 @@
     </div>
   </section>
 
-  <!-- PLAYGROUND -->
-  <section class="playground">
-    <p class="playground-hint">You can click and drag these around!</p>
-    <div class="playground-area">
-      <img src="images/star.png" class="draggable" style="width:48px; top:15%; left:8%; transform:rotate(-12deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:28px; top:60%; left:22%; transform:rotate(25deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:56px; top:30%; left:45%; transform:rotate(8deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:20px; top:70%; left:55%; transform:rotate(-30deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:40px; top:20%; left:75%; transform:rotate(18deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:32px; top:55%; left:85%; transform:rotate(-8deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:24px; top:80%; left:40%; transform:rotate(35deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:44px; top:10%; left:30%; transform:rotate(-20deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:18px; top:45%; left:65%; transform:rotate(12deg);" alt="">
-      <img src="images/star.png" class="draggable" style="width:36px; top:75%; left:12%; transform:rotate(-5deg);" alt="">
-    </div>
-  </section>
+  <!-- DRAGGABLE OBJECTS (full-page overlay) -->
+  <div class="draggable-layer">
+    <p class="draggable-hint">These are a few of my favorite things!</p>
+    <img src="images/matcha.png" class="draggable" style="width:150px; top:25%; left:22%; transform:rotate(-8deg);" alt="Matcha">
+    <img src="images/candel.png" class="draggable" style="width:100px; top:18%; left:33%; transform:rotate(5deg);" alt="Candle">
+    <img src="images/pottery.png" class="draggable" style="width:160px; top:30%; left:42%; transform:rotate(-3deg);" alt="Pottery">
+    <img src="images/values.png" class="draggable" style="width:220px; top:20%; left:54%; transform:rotate(-2deg);" alt="Values">
+    <img src="images/mochi.png" class="draggable" style="width:225px; top:28%; left:64%; transform:rotate(-12deg);" alt="Mochi">
+    <img src="images/greenman.png" class="draggable" style="width:105px; top:22%; left:75%; transform:rotate(6deg);" alt="Green Man">
+    <img src="images/star.png" class="draggable" style="width:28px; top:12%; left:18%; transform:rotate(-12deg);" alt="">
+    <img src="images/star.png" class="draggable" style="width:20px; top:35%; left:38%; transform:rotate(25deg);" alt="">
+    <img src="images/star.png" class="draggable" style="width:36px; top:8%; left:50%; transform:rotate(8deg);" alt="">
+    <img src="images/star.png" class="draggable" style="width:24px; top:38%; left:62%; transform:rotate(-20deg);" alt="">
+    <img src="images/star.png" class="draggable" style="width:18px; top:14%; left:82%; transform:rotate(15deg);" alt="">
+    <img src="images/sunset-polaroid.png" class="draggable" style="width:140px; top:22%; left:12%; transform:rotate(4deg);" alt="Sunset polaroid">
+    <img src="images/bdayboi-polaroid.png" class="draggable" style="width:140px; top:15%; left:30%; transform:rotate(-6deg);" alt="Birthday polaroid">
+    <img src="images/food-polaroid.png" class="draggable" style="width:140px; top:32%; left:58%; transform:rotate(7deg);" alt="Food polaroid">
+    <img src="images/hiking-polaroid.png" class="draggable" style="width:140px; top:20%; left:78%; transform:rotate(-4deg);" alt="Family polaroid">
+  </div>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="about-footer">
     <p>&copy; 2026 Kathy Choi</p>
     <ul class="footer-links">
       <li><a href="mailto:your@email.com">Email</a></li>
@@ -88,19 +91,22 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Playground drag
+    // Draggable objects — in-page, stays where you drop it
+    let highestZ = 100;
     document.querySelectorAll('.draggable').forEach(el => {
       let isDragging = false;
       let startX, startY, origX, origY;
 
       el.addEventListener('mousedown', e => {
         isDragging = true;
-        el.style.zIndex = 10;
+        highestZ++;
+        el.style.zIndex = highestZ;
+        el.style.cursor = 'grabbing';
+        el.style.transition = 'none';
         startX = e.clientX;
         startY = e.clientY;
         origX = el.offsetLeft;
         origY = el.offsetTop;
-        el.style.cursor = 'grabbing';
         e.preventDefault();
       });
 
@@ -113,15 +119,17 @@
       document.addEventListener('mouseup', () => {
         if (isDragging) {
           isDragging = false;
-          el.style.zIndex = '';
           el.style.cursor = 'grab';
+          el.style.transition = '';
         }
       });
 
       // Touch support
       el.addEventListener('touchstart', e => {
         isDragging = true;
-        el.style.zIndex = 10;
+        highestZ++;
+        el.style.zIndex = highestZ;
+        el.style.transition = 'none';
         const touch = e.touches[0];
         startX = touch.clientX;
         startY = touch.clientY;
@@ -140,7 +148,7 @@
       document.addEventListener('touchend', () => {
         if (isDragging) {
           isDragging = false;
-          el.style.zIndex = '';
+          el.style.transition = '';
         }
       });
     });
