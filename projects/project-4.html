@@ -15,11 +15,12 @@
   <aside class="toc">
     <a href="../index.html" class="toc-back">&larr; Back</a>
     <ul>
-      <li><a href="#problem" class="toc-link">Problem</a></li>
-      <li><a href="#research" class="toc-link">Research</a></li>
-      <li><a href="#solution" class="toc-link">Solution</a></li>
-      <li><a href="#testing" class="toc-link">User Testing</a></li>
-      <li><a href="#outcome" class="toc-link">Outcome + Takeaways</a></li>
+      <li><a href="#problem" class="toc-link">The Problem Was<br>Never Awareness</a></li>
+      <li><a href="#research" class="toc-link">What the<br>Research Showed</a></li>
+      <li><a href="#solution" class="toc-link">Building the Thing</a></li>
+      <li><a href="#testing" class="toc-link">What Testing<br>Revealed</a></li>
+      <li><a href="#possibilities" class="toc-link">What This<br>Makes Possible</a></li>
+      <li><a href="#outcome" class="toc-link">What I Took Away</a></li>
     </ul>
   </aside>
 
@@ -53,138 +54,112 @@
       </div>
     </div>
 
-    <!-- PROBLEM -->
+    <!-- THE PROBLEM WAS NEVER AWARENESS -->
     <div class="case-section fade-in" id="problem">
-      <h2>Problem</h2>
+      <h2>The Problem Was Never Awareness</h2>
       <p>
-        Dog waste is one of those things we all notice on NYC sidewalks but accept as part of city life. Last year, Brooklyn residents filed close to 700 311 complaints about dog waste — but only 13 citations were issued. Neighborhoods with the highest complaint rates often have the fewest free bag dispensers or accessible waste bins, so people are expected to behave responsibly without the infrastructure to support it. Enforcement requires an officer to witness someone leaving waste behind, making the Pooper-Scooper Law nearly impossible to enforce at scale.
+        Dog waste on NYC sidewalks isn't a mystery. Everyone sees it, everyone knows it's a problem, and as of February 2026, NYC has received close to 1,000 complaints about it. But complaints don't translate to change. Neighborhoods with the highest rates often have the fewest free bags or accessible bins, and enforcement requires an officer to witness the act — making the Pooper-Scooper Law nearly impossible to enforce at scale.
+      </p>
+      <p>
+        The gap isn't knowledge. It's infrastructure and incentive.
+      </p>
+      <p>
+        So the city does what cities do: runs awareness campaigns. And almost every one leads with shame.
       </p>
     </div>
 
-    <!-- RESEARCH BAND -->
+    <!-- RESEARCH BAND: What the Research Showed -->
     <div class="research-band">
       <div class="research-band-inner">
 
+        <!-- WHAT THE RESEARCH SHOWED -->
         <div class="case-section fade-in" id="research">
-          <h2>Research</h2>
+          <h2>What the Research Showed</h2>
           <p>
-            When enforcement or resources fall short, the city and neighborhoods turn to awareness campaigns. But the approach is almost always the same: catch people doing the wrong thing.
+            The NYC Department of Sanitation has run shame campaigns. Neighborhoods have posted signs calling out repeat offenders. These efforts get attention. They don't change behavior.
+          </p>
+          <p>
+            What the research kept pointing to was simpler: shame creates resistance, recognition creates momentum. Research on waste reduction campaigns found that visible collective progress motivates even the least-engaged participants to contribute at levels comparable to those already committed (Frontiers in Psychology, 2019). When cleanup feels like contributing to something shared, people show up.
+          </p>
+          <p>
+            The data made the case. But what stuck with me was the story underneath it — that people actually want to do the right thing. They just need a reason that feels good, not a reason to feel watched.
           </p>
         </div>
 
-        <div class="case-section fade-in">
-          <h3>Campaigns that shame, not change</h3>
-          <p>
-            The NYC Department of Sanitation ran a citywide anti-littering campaign that indirectly called out "dog-poop-trators." Neighborhoods have tried shame campaigns — posting photos or signs calling out repeat offenders. These efforts get attention, but they don't lead to lasting behavior change, and they're controversial since they publicly single out individuals.
-          </p>
+        <!-- CALLOUT -->
+        <div class="case-quotes">
+          <div class="quote-block fade-in">
+            <blockquote>
+              "I asked myself: what would it look like to create a solution that supports the behavior we want — instead of relying on catching people doing the wrong thing?"
+            </blockquote>
+          </div>
         </div>
 
-        <div class="case-section fade-in">
-          <h3>Community frustration is visible</h3>
-          <p>
-            Long Island City has been called the "dog-waste capital of New York" in online discussions — showing just how visible and irritating this problem has become for residents. The frustration is real, but the tools available haven't matched the scale of the issue.
-          </p>
-          <div class="placeholder-image">Research visual or data</div>
+        <!-- SHAME CAMPAIGNS IMAGE -->
+        <div class="case-images fade-in" style="margin-top: 15px;">
+          <img src="../images/shame.jpg" alt="Examples of shame-based dog waste campaigns" style="width: 100%; border-radius: 8px;">
         </div>
 
       </div>
     </div>
 
-    <!-- KEY INSIGHT (outside gray band) -->
-    <div class="case-insight fade-in">
-      <h3>Insight</h3>
-      <p class="insight-title">Encouragement works better than enforcement</p>
-      <p>
-        When cleanup feels like a chore — or worse, like something you could be punished for not doing — people disengage. But when it feels like contributing to something visible and shared, people are more willing to participate.
-      </p>
-      <p class="hmw-callout">
-        How might we make responsible cleanup feel rewarding instead of obligatory?
-      </p>
-    </div>
-
-    <!-- SOLUTION -->
+    <!-- BUILDING THE THING -->
     <div class="case-section fade-in" id="solution">
-      <h2>Solution</h2>
+      <h2>Building the Thing</h2>
       <p>
-        CleanPaws is an interactive dog-waste station designed for sidewalks and parks. It combines a waste bin with real-time feedback — turning cleanup into a small, positive community interaction. The station is built with an Arduino and a load cell that detects when a bag is dropped in, triggering immediate feedback for each action.
+        CleanPaws is an interactive dog-waste station designed for sidewalks and parks. Built with an Arduino and a load cell, it detects when a bag is dropped in and responds immediately. The station combines a waste bin, a built-in bag dispenser, and a small screen.
+      </p>
+      <p>
+        The interaction is intentionally small. Drop a bag, get a response. The screen lights up with a friendly message and plays a chime — just enough to acknowledge the action without feeling over the top. Messages rotate to keep it fresh.
+      </p>
+      <p>
+        A fullness meter under "Every Bag Counts" updates in real time, so people can see that their action moved the needle. And when the bin reaches capacity, the station briefly celebrates: 20 kilograms collected, 96 million gallons of water protected, enough to supply 877 NYC households. The final screen reads: "Community makes it happen."
+      </p>
+      <p>
+        That last part matters. The numbers give people a reason to believe their action counts. The framing gives them a reason to care.
       </p>
     </div>
 
-    <!-- DEMO -->
-    <div class="case-images fade-in">
-      <div class="placeholder-image" style="aspect-ratio: 16/9;">Demo GIF — someone dropping a bag in the bin</div>
-    </div>
-
-    <!-- HOW IT WORKS -->
-    <div class="case-feature fade-in">
-      <div class="case-feature-item">
-        <div class="case-feature-text">
-          <h3>Drop a bag, get a response</h3>
-          <p>
-            When someone drops a waste bag in, the screen lights up with a friendly message and plays a chime — just enough to acknowledge the action without feeling over the top. Messages rotate to keep the interaction fresh.
-          </p>
-        </div>
-      </div>
-      <div class="case-feature-item">
-        <div class="case-feature-text">
-          <h3>See collective progress</h3>
-          <p>
-            A fullness meter under "Every Bag Counts" updates immediately, giving people feedback that their action made a difference. Individual actions add up into visible community impact.
-          </p>
-        </div>
-      </div>
-      <div class="case-feature-item">
-        <div class="case-feature-text">
-          <h3>Celebrate when full</h3>
-          <p>
-            When the bin reaches capacity, a brief celebratory music cue plays and the screen cycles through impact data: 20 kilograms collected (about 60 dogs' worth), 96 million gallons of water protected — enough to supply 877 NYC households. The final screen reinforces "Community makes it happen."
-          </p>
-        </div>
-      </div>
-      <div class="case-feature-item">
-        <div class="case-feature-text">
-          <h3>Remove barriers</h3>
-          <p>
-            A built-in bag dispenser at the bottom ensures free bags are always available — removing a major barrier to cleanup.
-          </p>
-        </div>
-        <div class="placeholder-image tall">Prototype photo</div>
-      </div>
-    </div>
-
-    <!-- USER TESTING -->
+    <!-- WHAT TESTING REVEALED -->
     <div class="case-section fade-in" id="testing">
-      <h2>User Testing</h2>
-      <h3>What worked</h3>
+      <h2>What Testing Revealed</h2>
       <p>
-        People genuinely enjoyed the small interaction — the message and chime made it feel good to do the right thing. The collective count created a sense of community impact, and the contextualized data helped people understand the scale of the problem and how their individual action contributes to something larger.
-      </p>
-      <h3>What needs improvement</h3>
-      <p>
-        A larger screen or simple lighting could make the moment feel even more rewarding. The station could use more personality — something fun or delightful that makes people smile. And there's an opportunity to connect with existing volunteer groups, like community stewards from Hillside Dog Park or participants in the NYC Parks Adopt-a-Spot program, who already help maintain shared spaces — potentially collaborating on emptying the bin or integrating collected waste into compost streams.
+        People genuinely enjoyed the interaction. The chime and message made cleanup feel good rather than obligatory, and the impact data helped people connect a small action to something much larger. A bigger screen or subtle lighting could make the moment land even harder — something to explore in the next iteration.
       </p>
     </div>
 
-    <!-- OUTCOME + TAKEAWAYS -->
-    <div class="case-section fade-in" id="outcome">
-      <h2>Outcome + Takeaways</h2>
+    <!-- WHAT THIS MAKES POSSIBLE -->
+    <div class="case-section fade-in" id="possibilities">
+      <h2>What This Makes Possible</h2>
       <p>
-        CleanPaws is about making the right thing easy, visible, and even a little enjoyable. A small interaction that adds up — and helps shift how we care for shared spaces.
+        CleanPaws reframes a compliance problem as a participation opportunity. The infrastructure removes the barrier, the feedback makes the action feel worthwhile, and the collective data gives a sidewalk habit a larger meaning. It's a small interaction — but one that could scale into something the neighborhood actually feels.
       </p>
+    </div>
+
+    <!-- WHAT I TOOK AWAY -->
+    <div class="case-section fade-in" id="outcome">
+      <h2>What I Took Away</h2>
 
       <div class="takeaway-list">
         <div class="takeaway-item">
           <span class="takeaway-number">1</span>
           <div>
-            <h3>Design for Behavior, Not Compliance</h3>
-            <p>Positive feedback loops change behavior more effectively than punishment or awareness campaigns. Making an action feel good is more sustainable than making people feel guilty.</p>
+            <h3>Data builds credibility. Story builds memory.</h3>
+            <p>Numbers alone don't move people — but numbers with context do. "96 million gallons of water protected" lands differently than a statistic on a poster because it gives people a way to picture the impact of something they just did.</p>
           </div>
         </div>
         <div class="takeaway-item">
           <span class="takeaway-number">2</span>
           <div>
-            <h3>Small Moments Build Community</h3>
-            <p>Something as simple as a chime and a counter can make people feel like they're part of something larger. Collective visibility turns individual actions into shared wins.</p>
+            <h3>Design for behavior, not compliance.</h3>
+            <p>Positive feedback loops outlast punishment and awareness campaigns. Making an action feel good is more sustainable than making people feel guilty — and a lot more fun to design.</p>
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <span class="takeaway-number">3</span>
+          <div>
+            <h3>Infrastructure is half the solution.</h3>
+            <p>A free bag dispenser isn't a design detail. It's the thing that removes the most common excuse. Sometimes the most impactful design decision is just making the right thing easy.</p>
           </div>
         </div>
       </div>
