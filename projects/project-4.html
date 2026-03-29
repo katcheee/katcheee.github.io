@@ -11,10 +11,19 @@
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">Kathy Choi</a>
+    <ul class="nav-links">
+      <li><a href="../about.html">About</a></li>
+    </ul>
+  </nav>
+
   <!-- TABLE OF CONTENTS -->
   <aside class="toc">
     <a href="../index.html" class="toc-back">&larr; Back</a>
     <ul>
+      <li class="toc-star"><img src="../images/star.png" alt=""></li>
       <li><a href="#problem" class="toc-link">The Problem Was<br>Never Awareness</a></li>
       <li><a href="#research" class="toc-link">What the<br>Research Showed</a></li>
       <li><a href="#solution" class="toc-link">Building the Thing</a></li>
@@ -201,15 +210,41 @@
     window.addEventListener('scroll', updateTocPos);
     window.addEventListener('load', updateTocPos);
 
-    // TOC active state
+    // TOC dotted line
+    const tocUl = document.querySelector('.toc ul');
+    const tocItems = document.querySelectorAll('.toc ul li:not(.toc-star)');
+    const tocLine = document.createElement('div');
+    tocLine.className = 'toc-line';
+    tocUl.appendChild(tocLine);
+    function updateTocLine() {
+      const first = tocItems[0];
+      const last = tocItems[tocItems.length - 1];
+      const firstCenter = first.offsetTop + first.offsetHeight / 2;
+      const lastCenter = last.offsetTop + last.offsetHeight / 2;
+      tocLine.style.top = firstCenter + 'px';
+      tocLine.style.height = (lastCenter - firstCenter) + 'px';
+    }
+    window.addEventListener('load', updateTocLine);
+
+    // TOC active state + star position
     const tocLinks = document.querySelectorAll('.toc-link');
+    const tocStar = document.querySelector('.toc-star');
     const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+    function moveStar(activeLink) {
+      if (!activeLink || !tocStar) return;
+      const li = activeLink.parentElement;
+      const starOffset = li.offsetTop + (activeLink.offsetHeight / 2) - (tocStar.offsetHeight / 2);
+      tocStar.style.top = starOffset + 'px';
+    }
     const tocObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           tocLinks.forEach(link => link.classList.remove('active'));
           const active = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
-          if (active) active.classList.add('active');
+          if (active) {
+            active.classList.add('active');
+            moveStar(active);
+          }
         }
       });
     }, { rootMargin: '-20% 0px -60% 0px' });

@@ -11,10 +11,19 @@
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">Kathy Choi</a>
+    <ul class="nav-links">
+      <li><a href="../about.html">About</a></li>
+    </ul>
+  </nav>
+
   <!-- TABLE OF CONTENTS -->
   <aside class="toc">
     <a href="../index.html" class="toc-back">&larr; Back</a>
     <ul>
+      <li class="toc-star"><img src="../images/star.png" alt=""></li>
       <li><a href="#brief" class="toc-link">The Brief</a></li>
       <li><a href="#process" class="toc-link">Working With<br>the Client</a></li>
       <li><a href="#solution" class="toc-link">The Final Mark</a></li>
@@ -75,7 +84,7 @@
 
     <!-- LOGO EXPLORATIONS IMAGE -->
     <div class="case-images fade-in">
-      <img src="../images/noh-logo-options.jpg" alt="Logo exploration directions" style="width: 100%; border-radius: 8px;">
+      <img src="../images/noh-logo-options.png" alt="Logo exploration directions" style="width: 80%; display: block; margin: 0 auto; border-radius: 8px;">
     </div>
 
     <!-- THE FINAL MARK -->
@@ -87,8 +96,8 @@
     </div>
 
     <!-- FINAL LOGO IMAGE -->
-    <div class="case-images fade-in">
-      <img src="../images/noh-final-logo.jpg" alt="Notes of Hope final logo" style="width: 100%; border-radius: 8px;">
+    <div class="case-images fade-in" style="margin-top: 35px;">
+      <img src="../images/noh-final-logo.png" alt="Notes of Hope final logo" style="width: 60%; display: block; margin: 0 auto; border-radius: 8px;">
     </div>
 
     <!-- WHAT THIS MADE POSSIBLE -->
@@ -99,6 +108,24 @@
       </p>
     </div>
 
+    <!-- VIDEO CLIPS -->
+    <div class="insights-grid fade-in">
+      <div class="video-cell">
+        <video autoplay loop muted playsinline>
+          <source src="../images/cello.mp4" type="video/mp4">
+          <source src="../images/cello.mov" type="video/quicktime">
+        </video>
+      </div>
+      <div class="video-cell">
+        <video autoplay loop muted playsinline>
+          <source src="../images/clap.mp4" type="video/mp4">
+          <source src="../images/clap.mov" type="video/quicktime">
+        </video>
+      </div>
+    </div>
+
+    <p class="image-caption" style="text-align: center; margin-top: -35px;">Video production by Tanner Gwaltney Productions</p>
+
     <!-- QUOTE: NOTES OF HOPE -->
     <div class="case-quotes">
       <div class="quote-block fade-in">
@@ -106,22 +133,6 @@
           "Notes of Hope is so grateful to all of the amazing and talented artists who have donated their time and gifts to help us 'play-it-forward' to Boston's healthcare heroes."
         </blockquote>
         <cite>— Notes of Hope</cite>
-      </div>
-    </div>
-
-    <!-- VIDEO CLIPS (placeholder — pending mockup decision) -->
-    <div class="case-images fade-in">
-      <div class="image-grid two-col">
-        <figure>
-          <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px;">
-            <source src="../images/cello.mov" type="video/quicktime">
-          </video>
-        </figure>
-        <figure>
-          <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px;">
-            <source src="../images/clap.mov" type="video/quicktime">
-          </video>
-        </figure>
       </div>
     </div>
 
@@ -183,15 +194,41 @@
     window.addEventListener('scroll', updateTocPos);
     window.addEventListener('load', updateTocPos);
 
-    // TOC active state
+    // TOC dotted line — spans center of first to center of last link
+    const tocUl = document.querySelector('.toc ul');
+    const tocItems = document.querySelectorAll('.toc ul li:not(.toc-star)');
+    const tocLine = document.createElement('div');
+    tocLine.className = 'toc-line';
+    tocUl.appendChild(tocLine);
+    function updateTocLine() {
+      const first = tocItems[0];
+      const last = tocItems[tocItems.length - 1];
+      const firstCenter = first.offsetTop + first.offsetHeight / 2;
+      const lastCenter = last.offsetTop + last.offsetHeight / 2;
+      tocLine.style.top = firstCenter + 'px';
+      tocLine.style.height = (lastCenter - firstCenter) + 'px';
+    }
+    window.addEventListener('load', updateTocLine);
+
+    // TOC active state + star position
     const tocLinks = document.querySelectorAll('.toc-link');
+    const tocStar = document.querySelector('.toc-star');
     const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+    function moveStar(activeLink) {
+      if (!activeLink || !tocStar) return;
+      const li = activeLink.parentElement;
+      const starOffset = li.offsetTop + (activeLink.offsetHeight / 2) - (tocStar.offsetHeight / 2);
+      tocStar.style.top = starOffset + 'px';
+    }
     const tocObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           tocLinks.forEach(link => link.classList.remove('active'));
           const active = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
-          if (active) active.classList.add('active');
+          if (active) {
+            active.classList.add('active');
+            moveStar(active);
+          }
         }
       });
     }, { rootMargin: '-20% 0px -60% 0px' });

@@ -6,10 +6,10 @@
   <title>About — Kathy Choi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home">
 
   <!-- NAV -->
   <nav>
@@ -24,8 +24,7 @@
   <section class="about-section about-page">
     <div class="about-content fade-in">
       <div class="about-image">
-        <!-- Replace with your headshot: drop image into /images/ and update src -->
-        <img src="images/headshot.jpg" alt="Kathy Choi">
+        <img src="images/headshot1.png" alt="Kathy Choi">
       </div>
       <div class="about-text">
         <h2>A bit about me</h2>
@@ -38,11 +37,33 @@
           Add a second paragraph if you'd like — maybe about your approach to
           design, what kind of problems excite you, or what you're looking for next.
         </p>
+        <div class="about-links">
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">Resume</a>
+          <a href="mailto:your@email.com">Email</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER — Sydney style: just links -->
+  <!-- PLAYGROUND -->
+  <section class="playground">
+    <p class="playground-hint">You can click and drag these around!</p>
+    <div class="playground-area">
+      <img src="images/star.png" class="draggable" style="width:48px; top:15%; left:8%; transform:rotate(-12deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:28px; top:60%; left:22%; transform:rotate(25deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:56px; top:30%; left:45%; transform:rotate(8deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:20px; top:70%; left:55%; transform:rotate(-30deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:40px; top:20%; left:75%; transform:rotate(18deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:32px; top:55%; left:85%; transform:rotate(-8deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:24px; top:80%; left:40%; transform:rotate(35deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:44px; top:10%; left:30%; transform:rotate(-20deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:18px; top:45%; left:65%; transform:rotate(12deg);" alt="">
+      <img src="images/star.png" class="draggable" style="width:36px; top:75%; left:12%; transform:rotate(-5deg);" alt="">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2026 Kathy Choi</p>
     <ul class="footer-links">
@@ -66,6 +87,63 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Playground drag
+    document.querySelectorAll('.draggable').forEach(el => {
+      let isDragging = false;
+      let startX, startY, origX, origY;
+
+      el.addEventListener('mousedown', e => {
+        isDragging = true;
+        el.style.zIndex = 10;
+        startX = e.clientX;
+        startY = e.clientY;
+        origX = el.offsetLeft;
+        origY = el.offsetTop;
+        el.style.cursor = 'grabbing';
+        e.preventDefault();
+      });
+
+      document.addEventListener('mousemove', e => {
+        if (!isDragging) return;
+        el.style.left = (origX + e.clientX - startX) + 'px';
+        el.style.top = (origY + e.clientY - startY) + 'px';
+      });
+
+      document.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          el.style.zIndex = '';
+          el.style.cursor = 'grab';
+        }
+      });
+
+      // Touch support
+      el.addEventListener('touchstart', e => {
+        isDragging = true;
+        el.style.zIndex = 10;
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        origX = el.offsetLeft;
+        origY = el.offsetTop;
+        e.preventDefault();
+      }, { passive: false });
+
+      document.addEventListener('touchmove', e => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        el.style.left = (origX + touch.clientX - startX) + 'px';
+        el.style.top = (origY + touch.clientY - startY) + 'px';
+      }, { passive: false });
+
+      document.addEventListener('touchend', () => {
+        if (isDragging) {
+          isDragging = false;
+          el.style.zIndex = '';
+        }
+      });
+    });
   </script>
 
 </body>
