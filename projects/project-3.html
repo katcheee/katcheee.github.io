@@ -329,12 +329,22 @@
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const email = this.getAttribute('href').replace('mailto:', '');
-        const original = this.textContent;
-        navigator.clipboard.writeText(email).then(() => {
-          this.textContent = 'Copied!';
-          setTimeout(() => { this.textContent = original; }, 2000);
-        });
-        window.open(this.getAttribute('href'), '_self');
+        const el = this;
+        const original = el.textContent;
+        el.textContent = 'Copied!';
+        setTimeout(() => { el.textContent = original; }, 2000);
+        try {
+          navigator.clipboard.writeText(email);
+        } catch (err) {
+          const ta = document.createElement('textarea');
+          ta.value = email;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
       });
     });
   </script>
