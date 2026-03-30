@@ -96,7 +96,7 @@
             This was a team research project, and I was involved across all of it. We ran a SWOT analysis of the coworking landscape, observed members on-site, conducted intercept and in-depth interviews, and talked to stakeholders to get the organizational view.
           </p>
           <p>
-            One theme kept surfacing: members are constantly managing their energy. They come to cowork, but they also need room to step away and recharge. When that balance breaks, they disengage. Think of it like a battery — useful until it isn't.
+            One theme kept surfacing: members are constantly managing their energy. They come to cowork, but they also need room to step away and recharge. When that balance breaks, they disengage.
           </p>
           <p>
             Our findings broke into three areas.
@@ -325,28 +325,6 @@
     }, { rootMargin: '-20% 0px -60% 0px' });
     sections.forEach(s => { if (s) tocObserver.observe(s); });
 
-    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const email = this.getAttribute('href').replace('mailto:', '');
-        const el = this;
-        const original = el.textContent;
-        el.textContent = 'Copied!';
-        setTimeout(() => { el.textContent = original; }, 2000);
-        try {
-          navigator.clipboard.writeText(email);
-        } catch (err) {
-          const ta = document.createElement('textarea');
-          ta.value = email;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-        }
-      });
-    });
   </script>
 
 </body>

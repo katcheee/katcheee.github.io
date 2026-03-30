@@ -152,6 +152,10 @@ nav {
   color: var(--black);
 }
 
+.home-hero .hero-mobile {
+  display: none;
+}
+
 .home-hero .hero-sub {
   margin-top: 1rem;
   font-size: 0.9375rem;
@@ -730,6 +734,8 @@ nav {
   color: #b6d578;
   flex-shrink: 0;
   line-height: 1;
+  min-width: 36px;
+  text-align: right;
 }
 
 .takeaway-item h3 {
@@ -1327,8 +1333,17 @@ footer p {
   }
 
   .home-hero {
+    padding-top: calc(var(--nav-height) + 14rem);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .home-hero .hero-desktop {
+    display: none;
+  }
+
+  .home-hero .hero-mobile {
+    display: block;
   }
 
 
@@ -1376,7 +1391,7 @@ footer p {
   }
 
   .research-band {
-    padding: 40px 16px;
+    padding: 40px 0;
   }
 
   .research-band-inner {

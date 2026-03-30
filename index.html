@@ -23,7 +23,8 @@
   <!-- HERO -->
   <section class="home-hero" style="margin-bottom: 150px;">
     <div class="hero-inner">
-      <h1>Hi! I'm Kathy, with a K.<br>A graphic designer turned interaction&nbsp;designer.</h1>
+      <h1 class="hero-desktop">Hi! I'm Kathy, with a K.<br>A graphic designer turned interaction&nbsp;designer.</h1>
+      <h1 class="hero-mobile">Hi! I'm Kathy,<br>with a K<br>A graphic<br>designer turned<br>interaction designer.</h1>
       <p class="hero-sub">Currently pursuing MFA Interaction Design at the School of&nbsp;Visual&nbsp;Arts</p>
     </div>
   </section>
@@ -160,28 +161,6 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const email = this.getAttribute('href').replace('mailto:', '');
-        const el = this;
-        const original = el.textContent;
-        el.textContent = 'Copied!';
-        setTimeout(() => { el.textContent = original; }, 2000);
-        try {
-          navigator.clipboard.writeText(email);
-        } catch (err) {
-          const ta = document.createElement('textarea');
-          ta.value = email;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-        }
-      });
-    });
   </script>
 
 </body>

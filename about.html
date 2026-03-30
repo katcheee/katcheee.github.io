@@ -84,28 +84,6 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const email = this.getAttribute('href').replace('mailto:', '');
-        const el = this;
-        const original = el.textContent;
-        el.textContent = 'Copied!';
-        setTimeout(() => { el.textContent = original; }, 2000);
-        try {
-          navigator.clipboard.writeText(email);
-        } catch (err) {
-          const ta = document.createElement('textarea');
-          ta.value = email;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-        }
-      });
-    });
 
     // 3D tilt on hover — items react to cursor position (skip pill button)
     document.querySelectorAll('.draggable:not(.draggable-hint)').forEach(el => {
