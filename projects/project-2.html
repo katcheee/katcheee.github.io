@@ -193,7 +193,7 @@
       </p>
         <figure style="margin: 40px 0 0;">
           <img src="../images/pamphlet-mockup-01.jpg" alt="Volunteer onboarding pamphlet front" style="width: 100%; display: block; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-          <figcaption class="image-caption">Outer panels of pamphlet</figcaption>
+          <figcaption class="image-caption">Outer panels of pamphlet · Image by Steven Duarte Photography</figcaption>
         </figure>
         <figure style="margin: 40px 0 0;">
           <img src="../images/pamphlet-mockup-02.jpg" alt="Volunteer onboarding pamphlet back" style="width: 100%; display: block; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
@@ -246,9 +246,14 @@
 
   </div>
 
+  <!-- CTA -->
+  <div class="case-cta fade-in">
+    <a href="https://docs.google.com/presentation/d/1Vyv4y2HGxibV_8o6AzYa7NcYdQsCUfsxaGFc9B6KmFc/edit?usp=sharing" target="_blank">Still curious? View the deck &rarr;</a>
+  </div>
+
   <!-- PROJECT NAV -->
   <nav class="project-nav">
-    <a href="project-5.html" class="project-nav-link prev">&larr; Wynn Boston Harbor</a>
+    <a href="project-6.html" class="project-nav-link prev">&larr; Cengage</a>
     <a href="project-3.html" class="project-nav-link next">Industrious &rarr;</a>
   </nav>
 
@@ -256,9 +261,9 @@
   <footer>
     <p>&copy; 2026 Kathy Choi</p>
     <ul class="footer-links">
-      <li><a href="mailto:your@email.com">Email</a></li>
+      <li><a href="mailto:kchoi1@sva.edu">Email</a></li>
       <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-      <li><a href="#" target="_blank">Resume</a></li>
+      <li><a href="https://drive.google.com/file/d/1iwpczKPEdvBVWGgtTBH5EVFaIMsBh3jm/view?usp=sharing" target="_blank">Resume</a></li>
     </ul>
   </footer>
 
@@ -330,16 +335,24 @@
     // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
+    function openLightbox() {
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
     document.querySelectorAll('.lightbox-trigger').forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
-        lightbox.classList.add('active');
+        openLightbox();
       });
     });
-    lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('active'); });
+    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 
 </body>

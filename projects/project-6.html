@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cengage Textbook Covers — Kathy Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">Kathy Choi</a>
+    <ul class="nav-links">
+      <li><a href="../about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="toc">
+    <a href="../index.html" class="toc-back">&larr; Back</a>
+    <ul>
+      <li class="toc-star"><img src="../images/star.png" alt=""></li>
+      <li><a href="#brief" class="toc-link">The Brief</a></li>
+      <li><a href="#work" class="toc-link">The Work</a></li>
+      <li><a href="#result" class="toc-link">What This<br>Makes Possible</a></li>
+      <li><a href="#outcome" class="toc-link">What I Took Away</a></li>
+    </ul>
+  </aside>
+
+  <div class="case-wrapper">
+
+    <!-- HERO IMAGE -->
+    <div class="case-hero">
+      <img src="../images/cengage-hero.jpg" alt="Cengage textbook cover designs">
+    </div>
+
+    <!-- TITLE & META -->
+    <div class="case-header fade-in">
+      <h1>Cengage Textbook Covers</h1>
+      <p class="case-subtitle">Refreshing educational design for a new generation of students</p>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <h3>Role</h3>
+          <p>Graphic Designer</p>
+        </div>
+        <div class="case-meta-item">
+          <h3>Timeline</h3>
+          <p>2017</p>
+        </div>
+        <div class="case-meta-item">
+          <h3>Skills</h3>
+          <p>Brand Design</p>
+          <p>Graphic Design</p>
+          <p>Print Design</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE BRIEF -->
+    <div class="case-section fade-in" id="brief">
+      <h2>The Brief</h2>
+      <p>
+        Cengage, a global leader in educational content, releases new editions of their textbooks each year. Our team was tasked with refreshing cover designs across several disciplines — modernizing them for a contemporary student audience without losing their academic credibility.
+      </p>
+    </div>
+
+    <!-- THE WORK -->
+    <div class="case-section fade-in" id="work">
+      <h2>The Work</h2>
+      <p>
+        I designed multiple cover concepts for each title, working within Cengage's established guidelines while pushing the visuals toward something fresher and more current. Each round went through team critique and client feedback, and I refined the designs accordingly.
+      </p>
+      <p>
+        Three of my covers were selected by the client and went to print: Keys for Writers, Writing: 10 Core Concepts, and Concepts of Database Management.
+      </p>
+    </div>
+
+    <!-- THREE BOOKS IMAGE -->
+    <div class="case-images fade-in">
+      <img src="../images/three-books.png" alt="Three published Cengage textbook covers" style="width: 100%; display: block; border-radius: 8px;">
+    </div>
+
+    <!-- WHAT THIS MAKES POSSIBLE -->
+    <div class="case-section fade-in" id="result">
+      <h2>What This Makes Possible</h2>
+      <p>
+        All three covers were published and distributed nationally, reaching students across the country.
+      </p>
+    </div>
+
+    <!-- WHAT I TOOK AWAY -->
+    <div class="case-section fade-in" id="outcome">
+      <h2>What I Took Away</h2>
+
+      <div class="takeaway-list">
+        <div class="takeaway-item">
+          <span class="takeaway-number">1</span>
+          <div>
+            <h3>Published work has a different weight</h3>
+            <p>Designing for something that actually ships to hundreds of thousands of students sharpens your instincts. Every decision feels more deliberate when you know it's going to print.</p>
+          </div>
+        </div>
+        <div class="takeaway-item">
+          <span class="takeaway-number">2</span>
+          <div>
+            <h3>Feedback is part of the process</h3>
+            <p>Multiple rounds of revisions with a large client taught me how to listen, adapt, and advocate for the right design decisions without losing sight of the brief.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROJECT NAV -->
+  <nav class="project-nav">
+    <a href="project-5.html" class="project-nav-link prev">&larr; Wynn Boston Harbor</a>
+    <a href="project-2.html" class="project-nav-link next">GreenThumb &rarr;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Kathy Choi</p>
+    <ul class="footer-links">
+      <li><a href="mailto:kchoi1@sva.edu">Email</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="https://drive.google.com/file/d/1iwpczKPEdvBVWGgtTBH5EVFaIMsBh3jm/view?usp=sharing" target="_blank">Resume</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // TOC position — align with case header, stick at nav
+    const toc = document.querySelector('.toc');
+    const caseHeader = document.querySelector('.case-header');
+    function updateTocPos() {
+      const headerTop = caseHeader.getBoundingClientRect().top;
+      toc.style.top = Math.max(72, headerTop) + 'px';
+    }
+    window.addEventListener('scroll', updateTocPos);
+    window.addEventListener('load', updateTocPos);
+
+    // TOC dotted line — spans center of first to center of last link
+    const tocUl = document.querySelector('.toc ul');
+    const tocItems = document.querySelectorAll('.toc ul li:not(.toc-star)');
+    const tocLine = document.createElement('div');
+    tocLine.className = 'toc-line';
+    tocUl.appendChild(tocLine);
+    function updateTocLine() {
+      const first = tocItems[0];
+      const last = tocItems[tocItems.length - 1];
+      const firstCenter = first.offsetTop + first.offsetHeight / 2;
+      const lastCenter = last.offsetTop + last.offsetHeight / 2;
+      tocLine.style.top = firstCenter + 'px';
+      tocLine.style.height = (lastCenter - firstCenter) + 'px';
+    }
+    window.addEventListener('load', updateTocLine);
+
+    // TOC active state + star position
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const tocStar = document.querySelector('.toc-star');
+    const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+    function moveStar(activeLink) {
+      if (!activeLink || !tocStar) return;
+      const li = activeLink.parentElement;
+      const starOffset = li.offsetTop + (activeLink.offsetHeight / 2) - (tocStar.offsetHeight / 2);
+      tocStar.style.top = starOffset + 'px';
+    }
+    const tocObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.classList.remove('active'));
+          const active = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
+          if (active) {
+            active.classList.add('active');
+            moveStar(active);
+          }
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    sections.forEach(s => { if (s) tocObserver.observe(s); });
+  </script>
+
+</body>
+</html>

@@ -36,8 +36,8 @@
         </p>
         <div class="about-links">
           <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a href="#" target="_blank">Resume</a>
-          <a href="mailto:your@email.com">Email</a>
+          <a href="https://drive.google.com/file/d/1iwpczKPEdvBVWGgtTBH5EVFaIMsBh3jm/view?usp=sharing" target="_blank">Resume</a>
+          <a href="mailto:kchoi1@sva.edu">Email</a>
         </div>
       </div>
     </div>
@@ -45,7 +45,7 @@
 
   <!-- DRAGGABLE OBJECTS (full-page overlay) -->
   <div class="draggable-layer">
-    <p class="draggable-hint">These are a few of my favorite things!</p>
+    <p class="draggable-hint draggable" style="width:auto; top:4%; left:50%; transform:translateX(-50%);">These are a few of my favorite things!</p>
     <img src="images/matcha.png" class="draggable" style="width:150px; top:25%; left:22%; transform:rotate(-8deg);" alt="Matcha">
     <img src="images/candel.png" class="draggable" style="width:100px; top:18%; left:40%; transform:rotate(5deg);" alt="Candle">
     <img src="images/pottery.png" class="draggable" style="width:160px; top:30%; left:42%; transform:rotate(-3deg);" alt="Pottery">
@@ -61,16 +61,12 @@
     <img src="images/bdayboi-polaroid.png" class="draggable" style="width:140px; top:15%; left:30%; transform:rotate(-6deg);" alt="Birthday polaroid">
     <img src="images/food-polaroid.png" class="draggable" style="width:140px; top:32%; left:58%; transform:rotate(7deg);" alt="Food polaroid">
     <img src="images/hiking-polaroid.png" class="draggable" style="width:140px; top:20%; left:78%; transform:rotate(-4deg);" alt="Family polaroid">
+    <p class="drag-instruction">Click and drag these items!</p>
   </div>
 
   <!-- FOOTER -->
   <footer class="about-footer">
     <p>&copy; 2026 Kathy Choi</p>
-    <ul class="footer-links">
-      <li><a href="mailto:your@email.com">Email</a></li>
-      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-      <li><a href="#" target="_blank">Resume</a></li>
-    </ul>
   </footer>
 
   <script>
@@ -88,6 +84,48 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+    // 3D tilt on hover — items react to cursor position (skip pill button)
+    document.querySelectorAll('.draggable:not(.draggable-hint)').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        el.style.transition = 'transform 0.15s ease, filter 0.2s ease';
+      });
+      el.addEventListener('mousemove', (e) => {
+        if (el.dataset.dragging === 'true') return;
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const tiltX = -(y / rect.height) * 20;
+        const tiltY = (x / rect.width) * 20;
+        el.style.transform = `perspective(400px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        if (el.dataset.dragging === 'true') return;
+        const match = el.dataset.origTransform;
+        el.style.transition = 'transform 0.3s ease, filter 0.2s ease';
+        el.style.transform = match || '';
+      });
+    });
+
+    // Pill button — simple scale on hover
+    const pill = document.querySelector('.draggable-hint');
+    if (pill) {
+      pill.addEventListener('mouseenter', () => {
+        if (pill.dataset.dragging === 'true') return;
+        pill.style.transition = 'transform 0.2s ease';
+        pill.style.transform = 'translateX(-50%) scale(1.08)';
+      });
+      pill.addEventListener('mouseleave', () => {
+        if (pill.dataset.dragging === 'true') return;
+        pill.style.transition = 'transform 0.3s ease';
+        pill.style.transform = pill.dataset.origTransform || 'translateX(-50%)';
+      });
+    }
+
+    // Store original transforms
+    document.querySelectorAll('.draggable').forEach(el => {
+      el.dataset.origTransform = el.style.transform;
+    });
+
     // Draggable objects — in-page, stays where you drop it
     let highestZ = 100;
     document.querySelectorAll('.draggable').forEach(el => {
@@ -96,6 +134,7 @@
 
       el.addEventListener('mousedown', e => {
         isDragging = true;
+        el.dataset.dragging = 'true';
         highestZ++;
         el.style.zIndex = highestZ;
         el.style.cursor = 'grabbing';
@@ -116,6 +155,7 @@
       document.addEventListener('mouseup', () => {
         if (isDragging) {
           isDragging = false;
+          el.dataset.dragging = 'false';
           el.style.cursor = 'grab';
           el.style.transition = '';
         }
