@@ -1332,6 +1332,11 @@ footer p {
     -webkit-backdrop-filter: blur(12px);
   }
 
+  body.home::before {
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+  }
+
   .home-hero {
     padding-top: calc(var(--nav-height) + 14rem);
     padding-left: 1.5rem;
