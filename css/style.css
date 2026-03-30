@@ -812,13 +812,14 @@ nav {
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 3.5rem;
   align-items: start;
 }
 
 .about-image {
   width: 100%;
+  margin-top: -1.5rem;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
 }
 
