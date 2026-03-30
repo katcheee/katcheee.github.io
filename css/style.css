@@ -63,7 +63,7 @@ body.home::before {
   left: 0;
   right: 0;
   height: 100vh;
-  background: url('../images/gradient_bg2.png') no-repeat center top / 100% auto;
+  background: url('../images/gradient_bg2.webp') no-repeat center top / 100% auto;
   -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
   z-index: -1;
