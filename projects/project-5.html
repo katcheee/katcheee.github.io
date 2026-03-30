@@ -137,7 +137,7 @@
   <footer>
     <p>&copy; 2026 Kathy Choi</p>
     <ul class="footer-links">
-      <li><a href="mailto:kchoi1@sva.edu" target="_blank">Email</a></li>
+      <li><a href="mailto:kchoi1@sva.edu">Email</a></li>
       <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
       <li><a href="https://drive.google.com/file/d/1VlrBkFLVDGA_aJnBRJqomsj3Ms4mOwJ6/view?usp=drive_link" target="_blank">Resume</a></li>
     </ul>
@@ -200,6 +200,13 @@
       });
     }, { rootMargin: '-20% 0px -60% 0px' });
     sections.forEach(s => { if (s) tocObserver.observe(s); });
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = this.getAttribute('href');
+      });
+    });
   </script>
 
 </body>
