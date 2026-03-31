@@ -89,21 +89,21 @@
     if (window.innerWidth <= 768) {
       const imgs = document.querySelectorAll('.draggable-layer img.draggable');
       const m = [
-        { w: '130px', t: '20%', l: '0%' },    // Matcha — top row, far left
-        { w: '80px',  t: '22%', l: '22%' },   // Candle — top row, right of matcha
-        { w: '120px', t: '37%', l: '0%' },    // Pottery — mid row, far left
-        { w: '175px', t: '17%', l: '40%' },   // Values — top row, right side
-        { w: '120px', t: '64%', l: '22%' },   // Mochi — bottom, center-left
-        { w: '80px',  t: '51%', l: '76%' },   // Green Man — bottom row, far right
-        { w: '22px',  t: '28%', l: '15%' },   // Star — below matcha
-        { w: '18px',  t: '35%', l: '17%' },   // Star — left of pottery
-        { w: '16px',  t: '55%', l: '31%' },   // Star — between hiking & food
-        { w: '16px',  t: '65%', l: '68%' },   // Star — bottom right
-        { w: '14px',  t: '20%', l: '82%' },   // Star — far right, top
-        { w: '120px', t: '39%', l: '24%' },   // Sunset polaroid — mid row, center
-        { w: '125px', t: '35%', l: '52%' },   // Birthday polaroid — mid row, right
-        { w: '120px', t: '53%', l: '37%' },   // Food polaroid — bottom row, center
-        { w: '115px', t: '53%', l: '7%' },    // Hiking polaroid — bottom row, left
+        { w: '120px', t: '14%', l: '1%' },    // Matcha — row 1, left
+        { w: '75px',  t: '17%', l: '34%' },   // Candle — row 1, center
+        { w: '110px', t: '35%', l: '1%' },    // Pottery — row 2, left
+        { w: '160px', t: '12%', l: '56%' },   // Values — row 1, right
+        { w: '105px', t: '78%', l: '32%' },   // Mochi — bottom, below rows
+        { w: '75px',  t: '62%', l: '70%' },   // Green Man — row 3, far right
+        { w: '20px',  t: '30%', l: '18%' },   // Star — gap r1-r2, left
+        { w: '16px',  t: '30%', l: '50%' },   // Star — gap r1-r2, center
+        { w: '14px',  t: '55%', l: '24%' },   // Star — gap r2-r3, left
+        { w: '16px',  t: '54%', l: '62%' },   // Star — gap r2-r3, right
+        { w: '14px',  t: '75%', l: '64%' },   // Star — gap r3-mochi
+        { w: '105px', t: '37%', l: '31%' },   // Sunset polaroid — row 2, center
+        { w: '110px', t: '35%', l: '62%' },   // Birthday polaroid — row 2, right
+        { w: '105px', t: '59%', l: '33%' },   // Food polaroid — row 3, center
+        { w: '105px', t: '58%', l: '2%' },    // Hiking polaroid — row 3, left
       ];
       imgs.forEach((el, i) => {
         if (m[i]) {
@@ -114,7 +114,7 @@
       });
       const inst = document.querySelector('.drag-instruction');
       if (inst) {
-        inst.style.top = '84%';
+        inst.style.top = '92%';
         inst.style.left = '50%';
         inst.style.transform = 'translateX(-50%)';
       }
