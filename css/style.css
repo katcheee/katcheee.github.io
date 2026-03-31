@@ -183,6 +183,7 @@ nav {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 3rem 6rem;
+  scroll-margin-top: var(--nav-height);
 }
 
 .project-grid {
