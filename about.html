@@ -89,21 +89,21 @@
     if (window.innerWidth <= 768) {
       const imgs = document.querySelectorAll('.draggable-layer img.draggable');
       const m = [
-        { w: '140px', t: '18%', l: '0%' },    // Matcha
-        { w: '85px',  t: '20%', l: '28%' },   // Candle
-        { w: '130px', t: '36%', l: '0%' },    // Pottery
-        { w: '185px', t: '15%', l: '42%' },   // Values
-        { w: '130px', t: '63%', l: '23%' },   // Mochi
-        { w: '80px',  t: '53%', l: '77%' },   // Green Man
-        { w: '22px',  t: '13%', l: '23%' },   // Star
-        { w: '18px',  t: '35%', l: '18%' },   // Star
-        { w: '16px',  t: '54%', l: '29%' },   // Star
-        { w: '16px',  t: '66%', l: '72%' },   // Star
-        { w: '16px',  t: '17%', l: '82%' },   // Star
-        { w: '125px', t: '39%', l: '27%' },   // Sunset polaroid
-        { w: '125px', t: '37%', l: '54%' },   // Birthday polaroid
-        { w: '125px', t: '53%', l: '36%' },   // Food polaroid
-        { w: '120px', t: '52%', l: '8%' },    // Hiking polaroid
+        { w: '130px', t: '20%', l: '0%' },    // Matcha — top row, far left
+        { w: '80px',  t: '22%', l: '22%' },   // Candle — top row, right of matcha
+        { w: '120px', t: '37%', l: '0%' },    // Pottery — mid row, far left
+        { w: '175px', t: '17%', l: '40%' },   // Values — top row, right side
+        { w: '120px', t: '64%', l: '22%' },   // Mochi — bottom, center-left
+        { w: '80px',  t: '51%', l: '76%' },   // Green Man — bottom row, far right
+        { w: '22px',  t: '28%', l: '15%' },   // Star — below matcha
+        { w: '18px',  t: '35%', l: '17%' },   // Star — left of pottery
+        { w: '16px',  t: '55%', l: '31%' },   // Star — between hiking & food
+        { w: '16px',  t: '65%', l: '68%' },   // Star — bottom right
+        { w: '14px',  t: '20%', l: '82%' },   // Star — far right, top
+        { w: '120px', t: '39%', l: '24%' },   // Sunset polaroid — mid row, center
+        { w: '125px', t: '35%', l: '52%' },   // Birthday polaroid — mid row, right
+        { w: '120px', t: '53%', l: '37%' },   // Food polaroid — bottom row, center
+        { w: '115px', t: '53%', l: '7%' },    // Hiking polaroid — bottom row, left
       ];
       imgs.forEach((el, i) => {
         if (m[i]) {
