@@ -1366,13 +1366,17 @@ footer p {
     padding: 4rem 1.5rem;
   }
 
+  .about-page {
+    padding-top: calc(var(--nav-height) + 2rem);
+  }
+
   .about-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
   .about-image {
-    max-width: 320px;
+    max-width: 100%;
   }
 
   .case-wrapper {
