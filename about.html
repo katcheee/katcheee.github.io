@@ -85,6 +85,40 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+    // Mobile draggable layout — set via JS so drag still works
+    if (window.innerWidth <= 768) {
+      const imgs = document.querySelectorAll('.draggable-layer img.draggable');
+      const m = [
+        { w: '100px', t: '14%', l: '3%' },   // Matcha
+        { w: '65px',  t: '15%', l: '36%' },   // Candle
+        { w: '105px', t: '34%', l: '2%' },    // Pottery
+        { w: '140px', t: '12%', l: '52%' },   // Values
+        { w: '140px', t: '48%', l: '3%' },    // Mochi
+        { w: '70px',  t: '50%', l: '52%' },   // Green Man
+        { w: '20px',  t: '10%', l: '28%' },   // Star
+        { w: '14px',  t: '45%', l: '46%' },   // Star
+        { w: '24px',  t: '30%', l: '48%' },   // Star
+        { w: '18px',  t: '62%', l: '68%' },   // Star
+        { w: '14px',  t: '8%',  l: '88%' },   // Star
+        { w: '100px', t: '28%', l: '30%' },   // Sunset polaroid
+        { w: '100px', t: '26%', l: '60%' },   // Birthday polaroid
+        { w: '100px', t: '48%', l: '38%' },   // Food polaroid
+        { w: '100px', t: '56%', l: '55%' },   // Hiking polaroid
+      ];
+      imgs.forEach((el, i) => {
+        if (m[i]) {
+          el.style.width = m[i].w;
+          el.style.top = m[i].t;
+          el.style.left = m[i].l;
+        }
+      });
+      const inst = document.querySelector('.drag-instruction');
+      if (inst) {
+        inst.style.top = '80%';
+        inst.style.left = '50%';
+        inst.style.transform = 'translateX(-50%)';
+      }
+    }
 
     // 3D tilt on hover — items react to cursor position (skip pill button)
     document.querySelectorAll('.draggable:not(.draggable-hint)').forEach(el => {

@@ -1393,105 +1393,12 @@ footer p {
 
   /* Draggable layer — mobile layout */
   .draggable-layer {
-    height: 80vh;
+    height: 85vh;
   }
 
   .draggable-hint {
-    font-size: 0.85rem !important;
-    padding: 10px 20px !important;
-  }
-
-  /* Matcha */
-  .draggable-layer img.draggable:nth-of-type(1) {
-    width: 100px !important;
-    top: 15% !important;
-    left: 5% !important;
-  }
-  /* Candle */
-  .draggable-layer img.draggable:nth-of-type(2) {
-    width: 65px !important;
-    top: 18% !important;
-    left: 40% !important;
-  }
-  /* Pottery */
-  .draggable-layer img.draggable:nth-of-type(3) {
-    width: 105px !important;
-    top: 38% !important;
-    left: 3% !important;
-  }
-  /* Values */
-  .draggable-layer img.draggable:nth-of-type(4) {
-    width: 140px !important;
-    top: 14% !important;
-    left: 55% !important;
-  }
-  /* Mochi */
-  .draggable-layer img.draggable:nth-of-type(5) {
-    width: 140px !important;
-    top: 54% !important;
-    left: 5% !important;
-  }
-  /* Green Man */
-  .draggable-layer img.draggable:nth-of-type(6) {
-    width: 70px !important;
-    top: 56% !important;
-    left: 55% !important;
-  }
-  /* Stars — scaled and repositioned */
-  .draggable-layer img.draggable:nth-of-type(7) {
-    width: 20px !important;
-    top: 11% !important;
-    left: 32% !important;
-  }
-  .draggable-layer img.draggable:nth-of-type(8) {
-    width: 14px !important;
-    top: 48% !important;
-    left: 50% !important;
-  }
-  .draggable-layer img.draggable:nth-of-type(9) {
-    width: 24px !important;
-    top: 33% !important;
-    left: 55% !important;
-  }
-  .draggable-layer img.draggable:nth-of-type(10) {
-    width: 18px !important;
-    top: 68% !important;
-    left: 72% !important;
-  }
-  .draggable-layer img.draggable:nth-of-type(11) {
-    width: 14px !important;
-    top: 10% !important;
-    left: 88% !important;
-  }
-  /* Sunset polaroid */
-  .draggable-layer img.draggable:nth-of-type(12) {
-    width: 100px !important;
-    top: 34% !important;
-    left: 35% !important;
-  }
-  /* Birthday polaroid */
-  .draggable-layer img.draggable:nth-of-type(13) {
-    width: 100px !important;
-    top: 34% !important;
-    left: 65% !important;
-  }
-  /* Food polaroid */
-  .draggable-layer img.draggable:nth-of-type(14) {
-    width: 100px !important;
-    top: 54% !important;
-    left: 40% !important;
-  }
-  /* Hiking polaroid */
-  .draggable-layer img.draggable:nth-of-type(15) {
-    width: 100px !important;
-    top: 70% !important;
-    left: 12% !important;
-  }
-
-  .drag-instruction {
-    top: 82% !important;
-    left: 50% !important;
-    transform: translateX(-50%);
+    font-size: 0.85rem;
+    padding: 10px 20px;
   }
 
   .case-wrapper {
