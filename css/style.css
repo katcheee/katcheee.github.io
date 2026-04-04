@@ -406,7 +406,6 @@ nav {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: center;
-  margin-top: 20px;
 }
 
 .findings-image img {
@@ -475,7 +474,7 @@ nav {
   line-height: 1.4;
   color: var(--dark-gray);
   margin-top: 25px;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .h3-star {
@@ -1305,7 +1304,7 @@ footer p {
    ======================================== */
 .case-cta {
   text-align: center;
-  padding: 4rem 0 3rem;
+  padding: 3rem 0;
 }
 
 .case-cta a {
