@@ -499,7 +499,7 @@ nav {
 .case-insight {
   width: 78%;
   background: #f7f7f7;
-  padding: 36px 40px;
+  padding: 28px 28px;
   text-align: left;
 }
 
@@ -512,7 +512,11 @@ nav {
   width: 78%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 18px;
+}
+
+.insights-grid.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .insights-grid .case-insight {
@@ -1375,6 +1379,12 @@ footer p {
 /* ========================================
    RESPONSIVE
    ======================================== */
+@media (max-width: 960px) {
+  .insights-grid.three-col {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 0 1.5rem;
