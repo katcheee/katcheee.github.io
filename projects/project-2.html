@@ -269,7 +269,7 @@
   <footer>
     <p>&copy; 2026 Kathy Choi</p>
     <ul class="footer-links">
-      <li><a href="mailto:kchoi1@sva.edu">Email</a></li>
+      <li><a href="mailto:kchoi1@sva.edu" class="email-copy" onclick="copyEmail(this)">Email<span class="copy-toast">Copied!</span></a></li>
       <li><a href="https://www.linkedin.com/in/kathy-choi-45417280" target="_blank">LinkedIn</a></li>
       <li><a href="https://drive.google.com/file/d/1AspFxu-CR3KZm83oNCObVS6lmcbsOWtn/view?usp=sharing" target="_blank">Resume</a></li>
     </ul>
@@ -361,6 +361,22 @@
     lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    function copyEmail(el) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = 'kchoi1@sva.edu';
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const t = el.querySelector('.copy-toast');
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 1500);
+      } catch(e) {}
+    }
 
   </script>
 

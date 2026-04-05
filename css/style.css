@@ -941,6 +941,10 @@ nav {
   color: var(--black);
 }
 
+.about-links .email-copy .copy-toast {
+  bottom: calc(100% + 8px);
+}
+
 /* ========================================
    DRAGGABLE LAYER — in-page section
    ======================================== */
@@ -1048,8 +1052,34 @@ footer p {
   transition: opacity 0.25s;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links .email-copy:hover {
   opacity: 0.5;
+}
+
+.email-copy {
+  position: relative;
+}
+
+.email-copy .copy-toast {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--black);
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.email-copy .copy-toast.show {
+  opacity: 1;
 }
 
 /* ========================================

@@ -38,7 +38,7 @@
         <div class="about-links">
           <a href="https://www.linkedin.com/in/kathy-choi-45417280" target="_blank">LinkedIn</a>
           <a href="https://drive.google.com/file/d/1AspFxu-CR3KZm83oNCObVS6lmcbsOWtn/view?usp=sharing" target="_blank">Resume</a>
-          <a href="mailto:kchoi1@sva.edu">Email</a>
+          <a href="mailto:kchoi1@sva.edu" class="email-copy" onclick="copyEmail(this)">Email<span class="copy-toast">Copied!</span></a>
         </div>
       </div>
     </div>
@@ -225,6 +225,22 @@
         }
       });
     });
+
+    function copyEmail(el) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = 'kchoi1@sva.edu';
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const t = el.querySelector('.copy-toast');
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 1500);
+      } catch(e) {}
+    }
   </script>
 
 </body>
